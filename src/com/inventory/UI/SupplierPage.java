@@ -59,23 +59,23 @@ public class SupplierPage extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("SUPPLIERS");
+        jLabel1.setText("Proveedores");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter Supplier Details"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresa detalles del proveedor"));
 
-        jLabel2.setText("Supplier Code:");
+        jLabel2.setText("Código proveedor:");
 
-        jLabel3.setText("Full Name:");
+        jLabel3.setText("Nombre completo:");
 
-        jLabel4.setText("Location:");
+        jLabel4.setText("Ubicación:");
 
-        jLabel5.setText("Contact:");
+        jLabel5.setText("Contacto:");
 
-        jLabel6.setText("Debit Amount:");
+        jLabel6.setText("Importe débito:");
 
-        jLabel7.setText("Credit Amount:");
+        jLabel7.setText("Importe crédito:");
 
-        addButton.setText("Add");
+        addButton.setText("Agregar");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,7 @@ public class SupplierPage extends javax.swing.JPanel {
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,7 @@ public class SupplierPage extends javax.swing.JPanel {
             }
         });
 
-        editButton.setText("Edit");
+        editButton.setText("Actualizar");
         editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +100,7 @@ public class SupplierPage extends javax.swing.JPanel {
         });
 
         clearButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearButton.setText("CLEAR");
+        clearButton.setText("Limpiar");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,7 +210,7 @@ public class SupplierPage extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setText("Search:");
+        jLabel8.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

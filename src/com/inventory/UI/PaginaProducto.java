@@ -17,7 +17,7 @@ import java.sql.SQLException;
  *
  * @author Asjad Iqbal
  */
-public class ProductPage extends javax.swing.JPanel {
+public class PaginaProducto extends javax.swing.JPanel {
 
     /**
      * Creates new form ProductPage
@@ -30,10 +30,10 @@ public class ProductPage extends javax.swing.JPanel {
     Dashboard dashboard;
     
     
-    public ProductPage() {
+    public PaginaProducto() {
     }
     
-    public ProductPage(String username, Dashboard dashboard){
+    public PaginaProducto(String username, Dashboard dashboard){
         initComponents();
         this.username = username;
         this.dashboard = dashboard;
@@ -80,14 +80,14 @@ public class ProductPage extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("PRODUCTS");
+        jLabel1.setText("PRODUCTOS");
 
-        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter Product Details"));
+        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese detalles producto"));
 
-        suppCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a supplier" }));
-        suppCombo.setToolTipText("Select a supplier");
+        suppCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un proveedor" }));
+        suppCombo.setToolTipText("Seleccione un proveedor");
 
-        addSuppButton.setText("Click to add a New Supplier");
+        addSuppButton.setText("Clic para añadir nuevo proveedor");
         addSuppButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addSuppButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,23 +95,23 @@ public class ProductPage extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Product Code:");
+        jLabel2.setText("Codigo producto:");
 
-        jLabel3.setText("Product Name:");
+        jLabel3.setText("Nombre producto:");
 
-        jLabel4.setText("Date:");
+        jLabel4.setText("Fecha:");
 
-        jLabel5.setText("Quantity:");
+        jLabel5.setText("Cantidad:");
 
-        jLabel6.setText("Cost Price:");
+        jLabel6.setText("Precio costo:");
 
-        jLabel7.setText("Selling Price:");
+        jLabel7.setText("Precio venta:");
 
-        jLabel8.setText("Brand:");
+        jLabel8.setText("Marca:");
 
         jDateChooser1.setForeground(new java.awt.Color(102, 102, 102));
 
-        addButton.setText("Add");
+        addButton.setText("Añadir");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class ProductPage extends javax.swing.JPanel {
             }
         });
 
-        editButton.setText("Edit");
+        editButton.setText("Editar");
         editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +127,7 @@ public class ProductPage extends javax.swing.JPanel {
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +136,7 @@ public class ProductPage extends javax.swing.JPanel {
         });
 
         clearButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearButton.setText("CLEAR");
+        clearButton.setText("Limpiar");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

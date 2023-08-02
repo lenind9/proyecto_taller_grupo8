@@ -59,23 +59,23 @@ public class CustomerPage extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("CUSTOMERS");
+        jLabel1.setText("CLIENTES");
 
-        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter Customer Details"));
+        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Introducir Datos del Cliente"));
 
-        jLabel2.setText("Customer Code:");
+        jLabel2.setText("Codigo cliente:");
 
-        jLabel3.setText("Full Name:");
+        jLabel3.setText("Nombre completo:");
 
-        jLabel4.setText("Location:");
+        jLabel4.setText("Dirección:");
 
-        jLabel5.setText("Contact:");
+        jLabel5.setText("Contacto:");
 
-        jLabel6.setText("Debit Amount:");
+        jLabel6.setText("Importe débito:");
 
-        jLabel7.setText("Credit Amount:");
+        jLabel7.setText("Importe crédito:");
 
-        addButton.setText("Add");
+        addButton.setText("Agregar");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,7 @@ public class CustomerPage extends javax.swing.JPanel {
             }
         });
 
-        editButton.setText("Edit");
+        editButton.setText("Editar");
         editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,7 @@ public class CustomerPage extends javax.swing.JPanel {
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class CustomerPage extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setText("Search:");
+        jLabel8.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

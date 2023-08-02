@@ -25,7 +25,7 @@ public class HomePage extends javax.swing.JPanel {
         initComponents();
         UserDTO userDTO = new UserDTO();
         new UserDAO().getFullName(userDTO, username);
-        welcomeLabel.setText("Welcome,  " + userDTO.getFullName() + ".");
+        welcomeLabel.setText("Bienvenido,  " + userDTO.getFullName() + ".");
     }
 
     /**
@@ -41,11 +41,11 @@ public class HomePage extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         welcomeLabel.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
-        welcomeLabel.setText("Welcome");
+        welcomeLabel.setText("Bienvenido");
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html>Manage  your  inventory,  transactions  and  personnel,  all  in  one place.<br><br>Click  on  the  Menu  button  to  start.<html>");
+        jLabel1.setText("<html>Gestione su inventario, transacciones y personal, todo en un solo lugar.<br><br>Clic en el men\u00FA para iniciar.<html>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

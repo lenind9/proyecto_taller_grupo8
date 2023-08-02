@@ -55,23 +55,23 @@ public class UsersPage extends javax.swing.JPanel {
         userTable = new javax.swing.JTable();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("USERS");
+        jLabel1.setText("USUARIOS");
 
         entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter User Details"));
 
-        jLabel2.setText("Full Name:");
+        jLabel2.setText("Nombre completo:");
 
-        jLabel3.setText("Location:");
+        jLabel3.setText("Ubicación:");
 
-        jLabel4.setText("Contact:");
+        jLabel4.setText("Contacto:");
 
-        jLabel5.setText("Username:");
+        jLabel5.setText("Nombre usuario:");
 
-        jLabel6.setText("Password:");
+        jLabel6.setText("Constraseña:");
 
         userTypeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRATOR", "EMPLOYEE" }));
 
-        addButton.setText("Add");
+        addButton.setText("Agregar");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class UsersPage extends javax.swing.JPanel {
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +87,7 @@ public class UsersPage extends javax.swing.JPanel {
             }
         });
 
-        clearButton.setText("Clear");
+        clearButton.setText("Limpiar");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

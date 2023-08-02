@@ -17,13 +17,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-public class LoginPage extends javax.swing.JFrame {
+public class EntradaPage extends javax.swing.JFrame {
 
     UserDTO userDTO;
     LocalDateTime inTime;
 
     // Constructor method
-    public LoginPage() {
+    public EntradaPage() {
         initComponents();
         userDTO = new UserDTO();
     }
@@ -49,10 +49,10 @@ public class LoginPage extends javax.swing.JFrame {
         setName("loginFrame"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("Username:");
+        jLabel1.setText("Usuario:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Password:");
+        jLabel2.setText("Contrase\u00F1a:");
 
         passText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,11 +62,11 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("STORE  INVENTORY");
+        jLabel3.setText("STOCK TRACK");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRATOR", "EMPLOYEE" }));
+        jComboBox1.setModel(new DefaultComboBoxModel(new String[] {"ADMINISTRDOR", "EMPLEADO"}));
 
-        loginButton.setText("LOGIN");
+        loginButton.setText("ENTRAR");
         loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +74,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        clearButton.setText("CLEAR");
+        clearButton.setText("LIMPIAR");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,13 +189,13 @@ public class LoginPage extends javax.swing.JFrame {
         try {
             javax.swing.UIManager.setLookAndFeel(new FlatMaterialDarkerIJTheme());
             } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EntradaPage.class.getName()).log(Level.SEVERE, null, ex);
         } 
        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginPage().setVisible(true);
+                new EntradaPage().setVisible(true);
             }
         });
     }

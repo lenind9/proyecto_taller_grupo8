@@ -76,7 +76,7 @@ public class PurchasePage extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("PURCHASE");
+        jLabel1.setText("COMPRAS");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Purchase Product"));
 
@@ -91,19 +91,19 @@ public class PurchasePage extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setText("Product Code:");
+        jLabel3.setText("Codigo producto:");
 
-        jLabel4.setText("Product Name:");
+        jLabel4.setText("Nombre producto:");
 
-        jLabel5.setText("Date:");
+        jLabel5.setText("Fecja:");
 
-        jLabel6.setText("Quantity:");
+        jLabel6.setText("Cantidad:");
 
-        jLabel7.setText("Cost Price:");
+        jLabel7.setText("Precio costo:");
 
-        jLabel8.setText("Selling Price:");
+        jLabel8.setText("Precio venta:");
 
-        jLabel9.setText("Brand:");
+        jLabel9.setText("Marca:");
 
         codeText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -111,21 +111,21 @@ public class PurchasePage extends javax.swing.JPanel {
             }
         });
 
-        purchaseButton.setText("Purchase");
+        purchaseButton.setText("Comprar");
         purchaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 purchaseButtonActionPerformed(evt);
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
 
-        clearButton.setText("CLEAR");
+        clearButton.setText("Limpiar");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
@@ -246,7 +246,7 @@ public class PurchasePage extends javax.swing.JPanel {
         jScrollPane1.setViewportView(purchaseTable);
 
         refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        refreshButton.setText("REFRESH");
+        refreshButton.setText("RECARGAR");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
@@ -259,7 +259,7 @@ public class PurchasePage extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setText("Search:");
+        jLabel10.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -71,19 +71,19 @@ public class SalesPage extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("SALES");
+        jLabel1.setText("Ventas");
 
-        sellPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Sell Product"));
+        sellPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Venta Producto"));
 
-        jLabel2.setText("Customer Code:");
+        jLabel2.setText("Código cliente:");
 
-        jLabel3.setText("Product Code:");
+        jLabel3.setText("Codigo producto:");
 
-        jLabel4.setText("Date:");
+        jLabel4.setText("Fecha:");
 
-        jLabel5.setText("Selling Price:");
+        jLabel5.setText("Precio venta:");
 
-        jLabel6.setText("Quantity:");
+        jLabel6.setText("Cantidad:");
 
         custCodeText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -98,7 +98,7 @@ public class SalesPage extends javax.swing.JPanel {
         });
 
         sellButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        sellButton.setText("SELL PRODUCT");
+        sellButton.setText("VENDER PRODUCTO");
         sellButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sellButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,7 @@ public class SalesPage extends javax.swing.JPanel {
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Borrar");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +114,7 @@ public class SalesPage extends javax.swing.JPanel {
             }
         });
 
-        clearButton.setText("Clear");
+        clearButton.setText("Limpiar");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +122,7 @@ public class SalesPage extends javax.swing.JPanel {
             }
         });
 
-        addCustButton.setText("Click to add a New Customer");
+        addCustButton.setText("Clic para añadir un cliente");
         addCustButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addCustButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +237,7 @@ public class SalesPage extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setText("Search:");
+        jLabel7.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -41,7 +41,7 @@ public class UserLogsPage extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("USER LOGS");
+        jLabel1.setText("LOGS DE USUARIO ");
 
         logTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -57,7 +57,7 @@ public class UserLogsPage extends javax.swing.JPanel {
         jScrollPane1.setViewportView(logTable);
 
         refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        refreshButton.setText("REFRESH");
+        refreshButton.setText("RECARGAR");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
@@ -70,7 +70,7 @@ public class UserLogsPage extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Search:");
+        jLabel2.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
