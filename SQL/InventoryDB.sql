@@ -230,7 +230,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (17,'Asjad Iqbal','Chandigarh','9650786717','aduser1','dbadpass','ADMINISTRATOR'),(18,'Ahan Jaiswal','Delhi','9660654785','stduser1','dbstdpass','EMPLOYEE'),(20,'Trial Admin','Local','9876543210','root','root','ADMINISTRATOR'),(29,'Trial Employee','Local','1122334455','emp1','emp1','EMPLOYEE');
+INSERT INTO `users` VALUES (20,'Trial Admin','Local','9876543210','root','root','ADMINISTRADOR'),(29,'Trial Employee','Local','1122334455','emp1','emp1','EMPLEADO');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

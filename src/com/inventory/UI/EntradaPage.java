@@ -64,7 +64,7 @@ public class EntradaPage extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("STOCK TRACK");
 
-        jComboBox1.setModel(new DefaultComboBoxModel(new String[] {"ADMINISTRDOR", "EMPLEADO"}));
+        jComboBox1.setModel(new DefaultComboBoxModel(new String[] {"ADMINISTRADOR", "EMPLEADO"}));
 
         loginButton.setText("ENTRAR");
         loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

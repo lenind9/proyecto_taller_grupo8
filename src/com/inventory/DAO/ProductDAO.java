@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.inventory.DAO;
 
 import com.inventory.DTO.ProductDTO;
@@ -14,12 +9,7 @@ import java.sql.*;
 import java.util.Locale;
 import java.util.Vector;
 
-/**
- *
- * @author asjad
- */
-
-// Data Access Object for Products, Purchase, Stock and Sales
+// Data Access Object para Products, Purchase, Stock y Sales
 public class ProductDAO {
 
     Connection conn = null;
@@ -147,7 +137,7 @@ public class ProductDAO {
         return custCode;
     }
 
-    // Method to check for availability of stock in Inventory
+    // Metodo para comprobar la disponibilidad de stock en Inventario
     boolean flag = false;
     public boolean checkStock(String prodCode) {
         try {
@@ -162,7 +152,7 @@ public class ProductDAO {
         return flag;
     }
 
-    // Methods to add a new product
+    // Metodos para agregar un nuevo producto
     public void addProductDAO(ProductDTO productDTO) {
         try {
             String query = "SELECT * FROM products WHERE productname='"
@@ -206,7 +196,7 @@ public class ProductDAO {
         }
     }
 
-    // Method to add a new purchase transaction
+    // Metodo para agregar una nueva transaccion de compra
     public void addPurchaseDAO(ProductDTO productDTO) {
         try {
             String query = "INSERT INTO purchaseinfo VALUES(null,?,?,?,?,?)";
@@ -251,7 +241,7 @@ public class ProductDAO {
         deleteStock();
     }
 
-    // Method to update existing product details
+    // Metodo para actualizar los detalles del producto existente
     public void editProdDAO(ProductDTO productDTO) {
         try {
             String query = "UPDATE products SET productname=?,costprice=?,sellprice=?,brand=? WHERE productcode=?";
@@ -275,7 +265,7 @@ public class ProductDAO {
         }
     }
 
-    // Methods to handle updating of stocks in Inventory upon any transaction made
+    // Metodos para manejar la actualizacion de existencias en Inventario ante cualquier transaccion realizada
     public void editPurchaseStock(String code, int quantity) {
         try {
             String query = "SELECT * FROM currentstock WHERE productcode='" +code+ "'";
@@ -317,7 +307,7 @@ public class ProductDAO {
         }
     }
 
-    // Method to permanently delete a product from inventory
+    // Metodo para eliminar permanentemente un producto del inventario
     public void deleteProductDAO(String code) {
         try {
             String query = "DELETE FROM products WHERE productcode=?";
@@ -366,7 +356,7 @@ public class ProductDAO {
         deleteStock();
     }
 
-    // Sales transaction handling
+    // Manejo de transacciones de ventas
     public void sellProductDAO(ProductDTO productDTO, String username) {
         int quantity = 0;
         String prodCode = null;
@@ -399,7 +389,7 @@ public class ProductDAO {
         }
     }
 
-    // Products data set retrieval for display
+    // Conjuntos de datos de productos para visualización
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT productcode,productname,costprice,sellprice,brand FROM products ORDER BY pid";
@@ -410,7 +400,7 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Purchase table data set retrieval
+    // Conjunto de datos de la tabla de compras
     public ResultSet getPurchaseInfo() {
         try {
             String query = "SELECT PurchaseID,purchaseinfo.ProductCode,ProductName,Quantity,Totalcost " +
@@ -423,15 +413,13 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Stock table data set retrieval
+    // Conjunto de datos de la tabla de existencias
     public ResultSet getCurrentStockInfo() {
         try {
-            String query = """
-                    SELECT currentstock.ProductCode,products.ProductName,
-                    currentstock.Quantity,products.CostPrice,products.SellPrice
-                    FROM currentstock INNER JOIN products
-                    ON currentstock.productcode=products.productcode;
-                    """;
+            String query = " SELECT currentstock.ProductCode,products.ProductName, "
+            		+ "currentstock.Quantity,products.CostPrice,products.SellPrice"
+            		+ "FROM currentstock INNER JOIN products"
+            		+ "ON currentstock.productcode=products.productcode;";
             resultSet = statement.executeQuery(query);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -439,17 +427,15 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Sales table data set retrieval
+    // Conjunto de datos de la tabla de ventas
     public ResultSet getSalesInfo() {
         try {
-            String query = """
-                    SELECT salesid,salesinfo.productcode,productname,
-                    salesinfo.quantity,revenue,users.name AS Sold_by
-                    FROM salesinfo INNER JOIN products
-                    ON salesinfo.productcode=products.productcode
-                    INNER JOIN users
-                    ON salesinfo.soldby=users.username;
-                    """;
+            String query = "SELECT salesid,salesinfo.productcode,productname,"
+            		+ "salesinfo.quantity,revenue,users.name AS Sold_by"
+            		+ "FROM salesinfo INNER JOIN products"
+            		+ "ON salesinfo.productcode=products.productcode"
+            		+ "INNER JOIN users"
+            		+ "ON salesinfo.soldby=users.username;";
             resultSet = statement.executeQuery(query);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -457,7 +443,7 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for products
+    // Metodo de busqueda de productos
     public ResultSet getProductSearch(String text) {
         try {
             String query = "SELECT productcode,productname,costprice,sellprice,brand FROM products " +
@@ -480,7 +466,7 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for sales
+    // Metodo de busqueda de ventas
     public ResultSet getSalesSearch(String text) {
         try {
             String query = "SELECT salesid,salesinfo.productcode,productname,\n" +
@@ -500,7 +486,7 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for purchase logs
+    // Metodo de busqueda de registros de compra
     public ResultSet getPurchaseSearch(String text) {
         try {
             String query = "SELECT PurchaseID,purchaseinfo.productcode,products.productname,quantity,totalcost " +
@@ -582,7 +568,7 @@ public class ProductDAO {
     }
 
 
-    // Method to display product-related data set in tabular form
+    // Metodo para mostrar el conjunto de datos relacionados con el producto en forma tabular
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
