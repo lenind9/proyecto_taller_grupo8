@@ -63,8 +63,8 @@ public class MensajeBienvenida extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel welcomeLabel;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

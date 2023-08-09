@@ -10,7 +10,7 @@ package com.inventory.DTO;
  * @author asjad
  */
 
-// Data Transfer Object (DTO) class for Suppliers
+// Clase Data Transfer Object (DTO) para Suppliers
 
 public class SupplierDTO {
 

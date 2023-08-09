@@ -463,7 +463,7 @@ public class PaginaCompras extends javax.swing.JPanel {
 
     }//GEN-LAST:event_codeTextKeyReleased
 
-    // Method to load and update combo box containing supplier names
+    // Metodo para cargar y actualizar el combo box que contiene los nombres de los proveedores
     public void loadComboBox() {
         try {
             SupplierDAO supplierDAO = new SupplierDAO();
@@ -473,7 +473,7 @@ public class PaginaCompras extends javax.swing.JPanel {
         }
     }
 
-    // Method to load data into table
+    // Metodo para cargar datos en la tabla
     public void loadDataSet() {
         try {
             ProductDAO productDAO = new ProductDAO();
@@ -503,7 +503,7 @@ public class PaginaCompras extends javax.swing.JPanel {
         }
     }
 
-    // Method to display search result in table
+    // Metodo para mostrar el resultado de la busqueda en la tabla
     public void loadSearchData(String text) {
         try {
             ProductDAO productDAO = new ProductDAO();
@@ -516,7 +516,7 @@ public class PaginaCompras extends javax.swing.JPanel {
     }
     
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addSuppButton;
     private javax.swing.JTextField brandText;
     private javax.swing.JButton clearButton;
@@ -545,5 +545,5 @@ public class PaginaCompras extends javax.swing.JPanel {
     private javax.swing.JTextField searchText;
     private javax.swing.JTextField sellText;
     private javax.swing.JComboBox<String> itemsProveedores;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

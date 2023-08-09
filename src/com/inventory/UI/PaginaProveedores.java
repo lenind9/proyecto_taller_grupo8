@@ -359,7 +359,7 @@ public class PaginaProveedores extends javax.swing.JPanel {
     }//GEN-LAST:event_searchTextKeyReleased
 
 
-    // Method to load data into table
+    // Metodo para cargar datos en la tabla
     public void loadDataSet() {
         try {
             SupplierDAO supplierDAO = new SupplierDAO();
@@ -388,7 +388,7 @@ public class PaginaProveedores extends javax.swing.JPanel {
         }
     }
 
-    // Method to display search result in table
+    // Metodo para mostrar el resultado de la busqueda en la tabla
     public void loadSearchData(String text) {
         try {
             SupplierDAO supplierDAO = new SupplierDAO();
@@ -398,7 +398,7 @@ public class PaginaProveedores extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField codeText;
@@ -422,5 +422,5 @@ public class PaginaProveedores extends javax.swing.JPanel {
     private javax.swing.JTextField phoneText;
     private javax.swing.JTextField searchText;
     private javax.swing.JTable tablaProveedores;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

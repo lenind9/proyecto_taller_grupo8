@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.inventory.DAO;
+    package com.inventory.DAO;
 
 import com.inventory.DTO.CustomerDTO;
 import com.inventory.Database.ConnectionFactory;
@@ -19,7 +14,7 @@ import java.util.Vector;
  * @author asjad
  */
 
-// Data Access Object for Customers
+// Data Access Object para Customers
 public class CustomerDAO {
     Connection conn = null;
     PreparedStatement prepStatement= null;
@@ -35,7 +30,7 @@ public class CustomerDAO {
         }
     }
 
-    // Methods to add new custoemr
+    // Metodos para añadir un nuevo customer
     public void addCustomerDAO(CustomerDTO customerDTO) {
         try {
             String query = "SELECT * FROM customers WHERE fullname='"
@@ -47,7 +42,7 @@ public class CustomerDAO {
                     + "'";
             resultSet = statement.executeQuery(query);
             if (resultSet.next())
-                JOptionPane.showMessageDialog(null, "Customer already exists.");
+                JOptionPane.showMessageDialog(null, "Cliente ya existe.");
             else
                 addFunction(customerDTO);
         } catch (SQLException e) {
@@ -63,14 +58,14 @@ public class CustomerDAO {
             prepStatement.setString(3, customerDTO.getLocation());
             prepStatement.setString(4, customerDTO.getPhone());
             prepStatement.executeUpdate();
-            JOptionPane.showMessageDialog(null, "New customer has been added.");
+            JOptionPane.showMessageDialog(null, "Nuevo cliente se ha agregado.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
 
-    // Method to edit existing customer details
+    // Metodo para editar detalles de customer existente
     public  void editCustomerDAO(CustomerDTO customerDTO) {
         try {
             String query = "UPDATE customers SET fullname=?,location=?,phone=? WHERE customercode=?";
@@ -80,24 +75,24 @@ public class CustomerDAO {
             prepStatement.setString(3, customerDTO.getPhone());
             prepStatement.setString(4, customerDTO.getCustCode());
             prepStatement.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Customer details have been updated.");
+            JOptionPane.showMessageDialog(null, "Se han actualizado los detalles de cliente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Method to delete existing customer
+    // Metodo para eliminar customer existente
     public void deleteCustomerDAO(String custCode) {
         try {
             String query = "DELETE FROM customers WHERE customercode='" +custCode+ "'";
             statement.executeUpdate(query);
-            JOptionPane.showMessageDialog(null, "Customer removed.");
+            JOptionPane.showMessageDialog(null, "Cliente eliminado.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Method to retrieve data set to be displayed
+    // Metodo para recuperar los datos a mostrar
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT customercode,fullname,location,phone FROM customers";
@@ -108,7 +103,7 @@ public class CustomerDAO {
         return resultSet;
     }
 
-    // Method to retrieve search data
+    // Metodo para recuperar datos de busqueda
     public ResultSet getCustomerSearch(String text) {
         try {
             String query = "SELECT customercode,fullname,location,phone FROM customers " +
@@ -143,7 +138,7 @@ public class CustomerDAO {
         return resultSet;
     }
 
-    // Method to display data set in tabular form
+    // Metodo para mostrar el conjunto de datos en forma tabular
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();

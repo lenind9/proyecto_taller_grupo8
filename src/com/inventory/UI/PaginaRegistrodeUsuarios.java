@@ -147,7 +147,7 @@ public class PaginaRegistrodeUsuarios extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -155,5 +155,5 @@ public class PaginaRegistrodeUsuarios extends javax.swing.JPanel {
     private javax.swing.JTable tablaRegistros;
     private javax.swing.JButton refreshButton;
     private javax.swing.JTextField searchText;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

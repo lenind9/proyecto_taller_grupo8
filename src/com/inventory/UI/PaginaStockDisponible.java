@@ -107,7 +107,7 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         loadDataSet();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
-    // Method to load data into the table
+    // Metodo para cargar datos en la tabla
     public void loadDataSet() {
         try {
             ProductDAO productDAO = new ProductDAO();
@@ -138,11 +138,11 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton refreshButton;
     private javax.swing.JTable tablaStockDisponible;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

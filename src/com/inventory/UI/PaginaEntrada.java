@@ -21,7 +21,7 @@ public class PaginaEntrada extends javax.swing.JFrame {
     UserDTO userDTO;
     LocalDateTime inTime;
 
-    // Constructor method
+    // Constructor
     public PaginaEntrada() {
     	getContentPane().setBackground(new Color(153,179,254));
         initComponents();
@@ -158,8 +158,7 @@ public class PaginaEntrada extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    //Password Encryption
+
     private String encryptPass(String pass){
         String encPass = null;
         if(pass == null) return null;
@@ -207,17 +206,17 @@ public class PaginaEntrada extends javax.swing.JFrame {
     }//GEN-LAST:event_passTextActionPerformed
 
     
-    // Driver Method
-    // **APPLICATION STARTS EXECUTION HERE**
+    // Metodo del controlador
+    // **AQUÍ SE COMIENZA A EJECUTAR LA APP**
     public static void main(String[] args) {
-        // setting UI theme and LookAndFeel of the application
+        // Configuracion del tema de la interfaz de usuario y LookAndFeel de la app
         try {
             javax.swing.UIManager.setLookAndFeel(new FlatMaterialDarkerIJTheme());
             } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(PaginaEntrada.class.getName()).log(Level.SEVERE, null, ex);
         } 
        
-        /* Create and display the form */
+        /* Crear y mostrar el formulario */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PaginaEntrada().setVisible(true);

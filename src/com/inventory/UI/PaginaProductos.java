@@ -502,7 +502,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        // TODO add your handling code here:
 	    }                                         
 
-	    // Method to update combo box containing supplier names
+	    // Método para actualizar el cuadro combinado que contiene los nombres de los proveedores
 	    public void loadComboBox() {
 	        try {
 	            SupplierDAO supplierDAO = new SupplierDAO();
@@ -512,7 +512,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        }
 	    }
 
-	    // Method to load data into table
+	    // Metodo para cargar datos en la tabla
 	    public void loadDataSet() {
 	        try {
 	            ProductDAO productDAO = new ProductDAO();
@@ -541,7 +541,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        }
 	    }
 
-	    // Method to display search result in table
+	    // Metodo para mostrar el resultado de la busqueda en la tabla
 	    public void loadSearchData(String text) {
 	        try {
 	            ProductDAO productDAO = new ProductDAO();

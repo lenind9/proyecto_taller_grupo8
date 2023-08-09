@@ -359,7 +359,7 @@ public class PaginaUsuarios extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton deleteButton;
@@ -379,4 +379,5 @@ public class PaginaUsuarios extends javax.swing.JPanel {
     private javax.swing.JTable tablaUsuarios;
     private javax.swing.JComboBox<String> tipoUsuario;
     private javax.swing.JTextField usernameText;
+    // Fin de declaracion de variables//GEN-END:variables
 }

@@ -67,7 +67,7 @@ public class Dashboard extends javax.swing.JFrame {
         setVisible(true);
     }
 
-    // Methods to display different sections in the mainframe
+    // Metodos para mostrar diferentes secciones en el mainframe
     public void addHomePage(){
         layout.show(displayPanel, "Home");
     }
@@ -433,21 +433,21 @@ public class Dashboard extends javax.swing.JFrame {
         addLogsPage();
     }//GEN-LAST:event_logsButtonActionPerformed
 
-    // Method to display the user currently logged in
+    // Metodo para mostrar el usuario actualmente conectado
     public void currentUserSession() {
         UserDTO userDTO = new UserDTO();
         new UserDAO().getFullName(userDTO, username);
         nameLabel.setText("Usuario: " + userDTO.getFullName() + " ("+userSelect+")");
     }
 
-    // Allows only the ADMINISTRATOR type user to view and manipulate 'Users' and 'User Logs'
+    // Permite que solo el usuario de tipo ADMINISTRADOR vea y manipule 'Users' y 'User Logs'
     public void notForEmployee(){
         navPanel.remove(usersButton);
         navPanel.remove(logsButton);
         //navPanel.remove(salesButton);
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton custButton;
     private javax.swing.JPanel displayPanel;
     private javax.swing.JButton homeButton;
@@ -468,5 +468,5 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton suppButton;
     private javax.swing.JPanel userPanel;
     private javax.swing.JButton usersButton;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

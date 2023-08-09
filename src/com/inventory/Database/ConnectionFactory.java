@@ -20,7 +20,7 @@ import java.util.Properties;
  * @author asjad
  */
 
-//Class to retrieve connection for database and login verfication.
+// Clase para recuperar la conexion a la base de datos y la verificacion de inicio de sesion
 public class ConnectionFactory {
 	
 	static final String driver = "com.mysql.cj.jdbc.Driver";
@@ -58,7 +58,7 @@ public class ConnectionFactory {
         return conn;
     }
 
-    //Login verification method
+    // Metodo de verificacion de inicio de sesion
     public boolean checkLogin(String username, String password, String userType){
         String query = "SELECT * FROM users WHERE username='"
                 + username

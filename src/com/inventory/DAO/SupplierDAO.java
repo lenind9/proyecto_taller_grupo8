@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.inventory.DAO;
 
 import com.inventory.DTO.SupplierDTO;
@@ -19,7 +14,7 @@ import java.util.Vector;
  * @author asjad
  */
 
-// Data Access Object for Suppliers
+// Data Access Object para Suppliers
 public class SupplierDAO {
 
     Connection conn = null;
@@ -36,7 +31,7 @@ public class SupplierDAO {
         }
     }
 
-    // Methods to add new supplier
+    // Metodos para añadir un nuevo supplier
     public void addSupplierDAO(SupplierDTO supplierDTO) {
         try {
             String query = "SELECT * FROM suppliers WHERE fullname='"
@@ -70,7 +65,7 @@ public class SupplierDAO {
         }
     }
 
-    // Method to edit existing suppleir details
+    // Metodo para editar detalles de supplier existente
     public void editSupplierDAO(SupplierDTO supplierDTO) {
         try {
             String query = "UPDATE suppliers SET fullname=?,location=?,mobile=? WHERE suppliercode=?";
@@ -86,7 +81,7 @@ public class SupplierDAO {
         }
     }
 
-    // Method to delete existing supplier
+    // Metodo para eliminar un supplier existente
     public void deleteSupplierDAO(String suppCode) {
         try {
             String query = "DELETE FROM suppliers WHERE suppliercode='" +suppCode+ "'";
@@ -97,7 +92,7 @@ public class SupplierDAO {
         }
     }
 
-    // Supplier data set retrieval method
+    // Metodo de recuperacion de conjunto de datos supplier
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT suppliercode, fullname, location, mobile FROM suppliers";
@@ -108,7 +103,7 @@ public class SupplierDAO {
         return resultSet;
     }
 
-    // Search method
+    // Metodo para buscar
     public ResultSet getSearchResult(String searchText) {
         try {
             String query = "SELECT suppliercode, fullname, location, mobile FROM suppliers " +
@@ -121,7 +116,7 @@ public class SupplierDAO {
         return resultSet;
     }
 
-    // Method to set/update supplier combo box
+    // Metodo para actualizar supplier combo box
     public DefaultComboBoxModel<String> setComboItems(ResultSet resultSet) throws SQLException {
         Vector<String> suppNames = new Vector<>();
         while (resultSet.next()){
@@ -130,7 +125,7 @@ public class SupplierDAO {
         return new DefaultComboBoxModel<>(suppNames);
     }
 
-    // Method to display retrieved data set in tabular form
+    // Metodo para mostrar el conjunto de datos recuperados en forma tabular
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();

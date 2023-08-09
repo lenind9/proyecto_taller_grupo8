@@ -379,7 +379,7 @@ public class PaginaClientes extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaracion de variables - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField codeText;
@@ -403,5 +403,5 @@ public class PaginaClientes extends javax.swing.JPanel {
     private javax.swing.JTextField nameText;
     private javax.swing.JTextField phoneText;
     private javax.swing.JTextField searchText;
-    // End of variables declaration//GEN-END:variables
+    // Fin de declaracion de variables//GEN-END:variables
 }

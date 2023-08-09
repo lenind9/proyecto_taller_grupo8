@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.inventory.DAO;
 
 import com.inventory.DTO.UserDTO;
@@ -20,7 +15,7 @@ import java.util.Vector;
  * @author asjad
  */
 
-// Data Access Object class for Users
+// Data Access Object para Users
 
 public class UserDAO {
     Connection conn = null;
@@ -28,7 +23,7 @@ public class UserDAO {
     Statement statement = null;
     ResultSet resultSet = null;
 
-    // Constructor method
+    // Constructor
     public UserDAO() {
         try {
             conn = new ConnectionFactory().getConn();
@@ -39,7 +34,7 @@ public class UserDAO {
     }
 
 
-    // Methods to add new user
+    // Metodos para agregar nuevo usuario
     public void addUserDAO(UserDTO userDTO, String userType) {
         try {
             String query = "SELECT * FROM users WHERE name='"
@@ -105,7 +100,7 @@ public class UserDAO {
         }
     }
 
-    // Method to edit existing user
+    // Metodo para editar el usuario existente
     public void editUserDAO(UserDTO userDTO) {
 
         try {
@@ -124,7 +119,7 @@ public class UserDAO {
         }
     }
 
-    // Method to delete existing user
+    // Metodo para eliminar un usuario existente
     public void deleteUserDAO(String username) {
         try {
             String query = "DELETE FROM users WHERE username=?";
@@ -138,7 +133,7 @@ public class UserDAO {
         new PaginaUsuarios().loadDataSet();
     }
 
-    // Method to retrieve data set to display in table
+    // Metodo para recuperar el conjunto de datos para mostrar en la tabla
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT * FROM users";
@@ -221,7 +216,7 @@ public class UserDAO {
         }
     }
 
-    // Method to display data set in tabular form
+    // Metodo para mostrar el conjunto de datos en forma tabular
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
