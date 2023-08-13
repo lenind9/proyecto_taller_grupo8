@@ -7,9 +7,13 @@ import com.inventory.DTO.ProductDTO;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
+
 import java.sql.SQLException;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
+
 import javax.swing.table.DefaultTableCellRenderer;
 
 
@@ -42,7 +46,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 	            Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 	            c.setForeground(Color.white);  // Cambia el color de la fuente
-	            c.setBackground(new Color(0, 0, 96));  // Cambia el color de fondo
+	            c.setBackground(new Color(80, 77, 166));  // Cambia el color de fondo
 	            return c;
 	        }
 	    }
@@ -52,7 +56,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 
 	    	//ETIQUETAS
 	    	labelProductos = new javax.swing.JLabel();
-	        labelProductos.setBackground(new java.awt.Color(153, 179, 254));
+	        labelProductos.setBackground(new java.awt.Color(80, 77, 166));
 	        labelProductos.setFont(new java.awt.Font("Impact", 0, 24));
 	        labelProductos.setText("PRODUCTOS");
 	        labelProductos.setForeground(new java.awt.Color(0, 0, 0));
@@ -60,34 +64,42 @@ public class PaginaProductos extends javax.swing.JPanel {
 	    	labelBuscar = new javax.swing.JLabel();
 		    labelBuscar.setForeground(new Color(0,0,0));
 		    labelBuscar.setText("Buscar:");
+		    labelBuscar.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        
 	        LabelCodigoProducto = new javax.swing.JLabel();
 	        LabelCodigoProducto.setText("Código producto:");
 	        LabelCodigoProducto.setForeground(new Color(0, 0, 0));
+	        LabelCodigoProducto.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        
 	        labelNomProducto = new javax.swing.JLabel();
 	        labelNomProducto.setText("Nombre Producto:");
+	        labelNomProducto.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelNomProducto.setForeground(new Color(0, 0, 0));
 	        
 	        labelFecha = new javax.swing.JLabel();
 	        labelFecha.setText("Fecha:");
+	        labelFecha.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelFecha.setForeground(new Color(0, 0, 0));
 	        
 	        labelCantidad = new javax.swing.JLabel();
 	        labelCantidad.setText("Cantidad:");
+	        labelCantidad.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelCantidad.setToolTipText("");
 	        labelCantidad.setForeground(new Color(0, 0, 0));
 	        
 	        labelPrecio = new javax.swing.JLabel();
 	        labelPrecio.setText("Precio Costo:");
+	        labelPrecio.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelPrecio.setForeground(new Color(0, 0, 0));
 	        
 	        labelPrecioVenta = new javax.swing.JLabel();
 	        labelPrecioVenta.setText("Precio Venta:");
+	        labelPrecioVenta.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelPrecioVenta.setForeground(new Color(0, 0, 0));
 	        
 	        labelMarca = new javax.swing.JLabel();
 	        labelMarca.setText("Marca:");
+	        labelMarca.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        labelMarca.setForeground(new Color(0, 0, 0));
 	        
 	        
@@ -95,30 +107,44 @@ public class PaginaProductos extends javax.swing.JPanel {
 	   
 	        buscarText = new javax.swing.JTextField();
 	        buscarText.setBackground(new Color(255,255,255));
+	        buscarText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        buscarText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        buscarText.setForeground(new Color(0,0,0));
 	        
 	        codigoText = new javax.swing.JTextField();
 	        codigoText.setBackground(new Color(255,255,255));
+	        codigoText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        codigoText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        codigoText.setForeground(new Color(0,0,0));
 	        
 	        nombreProductoText = new javax.swing.JTextField();
 	        nombreProductoText.setBackground(new Color(255,255,255));
+	        nombreProductoText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        nombreProductoText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        nombreProductoText.setForeground(new Color(0,0,0));
 	        
 	        cantidadText = new javax.swing.JTextField();
 	        cantidadText.setBackground(new Color(255,255,255));
+	        cantidadText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        cantidadText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        cantidadText.setForeground(new Color(0,0,0));
 	        
 	        costoText = new javax.swing.JTextField();
 	        costoText.setBackground(new Color(255,255,255));
+	        costoText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        costoText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        costoText.setForeground(new Color(0,0,0));
 	        
 	        precioVentaText = new javax.swing.JTextField();
 	        precioVentaText.setBackground(new Color(255,255,255));
+	        precioVentaText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        precioVentaText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
 	        precioVentaText.setForeground(new Color(0,0,0));
 	        
 	        marcaText = new javax.swing.JTextField();
 	        marcaText.setBackground(new Color(255,255,255));
+	        marcaText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
+	        marcaText.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        marcaText.setForeground(new Color(0,0,0));
 	        
 	        
@@ -127,8 +153,9 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        //boton añadir un nuevo proveedor
 	        btnAniadirProveedor = new javax.swing.JButton();
 	        btnAniadirProveedor.setForeground(new Color(255,255,255));
-	        btnAniadirProveedor.setBackground(new Color(0, 0, 96));
+	        btnAniadirProveedor.setBackground(new Color(80, 77, 166));
 	        btnAniadirProveedor.setText("Click para añadir un nuevo proveedor");
+	        btnAniadirProveedor.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        btnAniadirProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	        btnAniadirProveedor.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,8 +176,9 @@ public class PaginaProductos extends javax.swing.JPanel {
 	        itemsProveedores = new javax.swing.JComboBox<>();
 	        itemsProveedores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un proveedor" }));
 	        itemsProveedores.setToolTipText("Seleccione un proveedor");
+	        itemsProveedores.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        itemsProveedores.setForeground(new Color(255,255,255));
-	        itemsProveedores.setBackground(new Color(0, 0, 96));
+	        itemsProveedores.setBackground(Color.WHITE);
 	        itemsProveedores.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
 	                suppComboActionPerformed(evt);
@@ -163,18 +191,20 @@ public class PaginaProductos extends javax.swing.JPanel {
 
 	        jScrollPane1 = new javax.swing.JScrollPane();
 	        tablaProductos = new javax.swing.JTable();
-	      
-	        setBackground(new java.awt.Color(153, 179, 254));
+	        tablaProductos.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+	        tablaProductos.setRowHeight(40);
+	        setBackground(Color.WHITE);
 
 	        
-	        entryPanel.setBackground(new java.awt.Color(153, 179, 254));
+	        entryPanel.setBackground(new java.awt.Color(255,255,255));
 	        entryPanel.setForeground(new Color (0,0,0));
 	        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese los detalles del producto"));
 
 	      
-	        btnAniadir.setBackground(new java.awt.Color(0, 0, 96));
+	        btnAniadir.setBackground(new java.awt.Color(80, 77, 166));
 	        btnAniadir.setForeground(new java.awt.Color(255, 255, 255));
 	        btnAniadir.setText("Añadir");
+	        btnAniadir.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        btnAniadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	        btnAniadir.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,9 +212,10 @@ public class PaginaProductos extends javax.swing.JPanel {
 	            }
 	        });
 
-	        btnEditar.setBackground(new java.awt.Color(0, 0, 96));
+	        btnEditar.setBackground(new java.awt.Color(80, 77, 166));
 	        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
 	        btnEditar.setText("Editar");
+	        btnEditar.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	        btnEditar.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,9 +223,10 @@ public class PaginaProductos extends javax.swing.JPanel {
 	            }
 	        });
 
-	        btnEliminar.setBackground(new java.awt.Color(0, 0, 96));
+	        btnEliminar.setBackground(new java.awt.Color(80, 77, 166));
 	        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
 	        btnEliminar.setText("Borrar");
+	        btnEliminar.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,10 +234,11 @@ public class PaginaProductos extends javax.swing.JPanel {
 	            }
 	        });
 
-	        btnLimpiar.setBackground(new java.awt.Color(0, 0, 96));
+	        btnLimpiar.setBackground(new java.awt.Color(80, 77, 166));
 	        btnLimpiar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 	        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
 	        btnLimpiar.setText("Limpiar");
+	        btnLimpiar.setFont(new Font("Roboto Light", Font.PLAIN, 15));
 	        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,8 +339,8 @@ public class PaginaProductos extends javax.swing.JPanel {
 
 	        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-	        tablaProductos.setBackground(new java.awt.Color(0, 0, 96));
-	        tablaProductos.setForeground(new java.awt.Color(255, 255, 255));
+	        tablaProductos.setBackground(new java.awt.Color(255,255,255));
+	        tablaProductos.setForeground(new java.awt.Color(0,0,0 ));
 	        tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
 	            new Object [][] {
 	                {null, null, null, null},
@@ -334,7 +367,7 @@ public class PaginaProductos extends javax.swing.JPanel {
 	            }
 	        });
 	        
-	        btnRefrescar.setBackground(new java.awt.Color(0, 0, 96));
+	        btnRefrescar.setBackground(new java.awt.Color(80, 77, 166));
 	        //btnRefrescar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 	        btnRefrescar.setForeground(new java.awt.Color(255, 255, 255));
 	        btnRefrescar.setText("Refrescar");

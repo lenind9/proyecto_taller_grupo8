@@ -10,12 +10,13 @@ import java.awt.Color;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
 
 public class MensajeBienvenida extends javax.swing.JPanel {
 
     
     public MensajeBienvenida(String username) {
-    	setBackground(new Color(153, 179, 254));
+    	setBackground(Color.WHITE);
         initComponents();
         UserDTO userDTO = new UserDTO();
         new UserDAO().getFullName(userDTO, username);
@@ -31,10 +32,10 @@ public class MensajeBienvenida extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel1.setForeground(new Color(0, 0, 0));
 
-        welcomeLabel.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
+        welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 46)); // NOI18N
         welcomeLabel.setText("Bienvenido");
 
-        jLabel1.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLabel1.setFont(new Font("Impact", Font.PLAIN, 30)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html>Gestione su inventario, transacciones y personal, todo en un solo lugar.<br><br>Clic en el men\u00FA para iniciar.<html>");
 
@@ -42,12 +43,10 @@ public class MensajeBienvenida extends javax.swing.JPanel {
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(54)
-        			.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
-        			.addContainerGap(62, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
-        			.addComponent(welcomeLabel, GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(welcomeLabel, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
         			.addContainerGap())
         );
         layout.setVerticalGroup(
@@ -55,9 +54,9 @@ public class MensajeBienvenida extends javax.swing.JPanel {
         		.addGroup(layout.createSequentialGroup()
         			.addGap(12)
         			.addComponent(welcomeLabel, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(101, Short.MAX_VALUE))
+        			.addGap(31)
+        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(146, Short.MAX_VALUE))
         );
         this.setLayout(layout);
     }// </editor-fold>//GEN-END:initComponents

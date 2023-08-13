@@ -15,6 +15,22 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Toolkit;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.SystemColor;
+import java.awt.Dialog.ModalExclusionType;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.Canvas;
+import java.awt.Insets;
+import java.awt.ComponentOrientation;
 
 public class PaginaEntrada extends javax.swing.JFrame {
 
@@ -23,6 +39,13 @@ public class PaginaEntrada extends javax.swing.JFrame {
 
     // Constructor
     public PaginaEntrada() {
+    	setPreferredSize(new Dimension(1000, 800));
+    	setIgnoreRepaint(true);
+    	getContentPane().setMaximumSize(new Dimension(800, 600));
+    	getContentPane().setMinimumSize(new Dimension(800, 600));
+    	setLocationByPlatform(true);
+    	setFont(new Font("Roboto Thin", Font.PLAIN, 19));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(PaginaEntrada.class.getResource("/com/inventory/UI/Icons/logomin.png")));
     	getContentPane().setBackground(new Color(153,179,254));
         initComponents();
         userDTO = new UserDTO();
@@ -36,7 +59,7 @@ public class PaginaEntrada extends javax.swing.JFrame {
         public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
             Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
             c.setForeground(Color.white);  // Cambia el color de la fuente
-            c.setBackground(new Color(0, 0, 96));  // Cambia el color de fondo
+            c.setBackground(new Color(138, 204, 204));  // Cambia el color de fondo
             return c;
         }
     }
@@ -46,37 +69,45 @@ public class PaginaEntrada extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel1.setForeground(new Color(0, 0, 0));
+        jLabel1.setAutoscrolls(true);
+        jLabel1.setForeground(Color.BLACK);
         jLabel2 = new javax.swing.JLabel();
-        jLabel2.setForeground(new Color(0, 0, 0));
+        jLabel2.setAutoscrolls(true);
+        jLabel2.setForeground(Color.BLACK);
         userText = new javax.swing.JTextField();
+        userText.setHorizontalAlignment(SwingConstants.CENTER);
+        userText.setMargin(new Insets(2, 2, 0, 2));
+        userText.setFont(new Font("Roboto Light", Font.PLAIN, 25));
+        userText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
         userText.setForeground(new Color(0, 0, 0));
-        userText.setBackground(new Color(255, 255, 255));
+        userText.setBackground(new Color(153,179,254));
         passText = new javax.swing.JPasswordField();
+        passText.setHorizontalAlignment(SwingConstants.CENTER);
+        passText.setMargin(new Insets(1, 1, 0, 1));
+        passText.setFont(new Font("Roboto Light", Font.PLAIN, 25));
+        passText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
         passText.setForeground(new Color(0, 0, 0));
-        passText.setBackground(new Color(255, 255, 255));
-        jLabel3 = new javax.swing.JLabel();
-        jLabel3.setForeground(new Color(255, 255, 255));
+        passText.setBackground(new Color(153,179,254));
         rolUsuario = new javax.swing.JComboBox<>();
-        rolUsuario.setForeground(new Color(255, 255, 255));
-        rolUsuario.setBackground(new Color(0, 0, 96));
+        rolUsuario.setAutoscrolls(true);
+        rolUsuario.setBorder(null);
+        rolUsuario.setForeground(Color.BLACK);
+        rolUsuario.setBackground(new Color(138, 204, 204));
         loginButton = new javax.swing.JButton();
-        loginButton.setBackground(new Color(0, 0, 96));
-        loginButton.setForeground(new Color(255, 255, 255));
-        clearButton = new javax.swing.JButton();
-        clearButton.setBackground(new Color(0, 0, 96));
-        clearButton.setForeground(new Color(255, 255, 255));
+        loginButton.setBorder(null);
+        loginButton.setBackground(new Color(138, 204, 204));
+        loginButton.setForeground(Color.BLACK);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
-        setBackground(new java.awt.Color(102, 102, 102));
+        setBackground(new java.awt.Color(153,179,254));
         setBounds(new java.awt.Rectangle(500, 100, 0, 0));
         setName("loginFrame"); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setFont(new Font("Roboto Light", Font.BOLD, 20)); // NOI18N
         jLabel1.setText("Usuario:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new Font("Roboto Light", Font.BOLD, 20)); // NOI18N
         jLabel2.setText("Contrase\u00F1a:");
 
         passText.addActionListener(new java.awt.event.ActionListener() {
@@ -84,10 +115,6 @@ public class PaginaEntrada extends javax.swing.JFrame {
                 passTextActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("STOCK TRACK");
 
         rolUsuario.setModel(new DefaultComboBoxModel(new String[] {"ADMINISTRADOR", "EMPLEADO"}));
 
@@ -98,62 +125,80 @@ public class PaginaEntrada extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-
-        clearButton.setText("LIMPIAR");
-        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearButtonActionPerformed(evt);
-            }
-        });
-
+        
+        ImageIcon originalImage = new ImageIcon(PaginaEntrada.class.getResource("/com/inventory/UI/Icons/logomin.png"));
+        Integer alt = originalImage.getIconHeight();
+        Integer anch = originalImage.getIconWidth();
+        
+        JLabel lblNewLabel = new JLabel("");
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel.setIcon(new ImageIcon(PaginaEntrada.class.getResource("/com/inventory/UI/Icons/logomin.png")));
+        //lblNewLabel.setPreferredSize(new Dimension(200,));
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+       
+        
+        
+        
+      
+       
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userText))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passText))
-                    .addComponent(rolUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
-                .addContainerGap(52, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(26)
+        					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 932, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(419)
+        					.addComponent(rolUsuario, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(246)
+        					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE))
+        					.addGap(4)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(passText)
+        						.addComponent(userText, GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(388)
+        					.addComponent(loginButton, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addGap(18, 18, 18)
-                .addComponent(rolUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 415, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(userText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addGroup(layout.createSequentialGroup()
+        							.addGap(38)
+        							.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(layout.createSequentialGroup()
+        							.addGap(52)
+        							.addComponent(passText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        					.addGap(18)
+        					.addComponent(rolUsuario, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
+        			.addGap(36)
+        			.addComponent(loginButton, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+        			.addGap(154))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,15 +235,10 @@ public class PaginaEntrada extends javax.swing.JFrame {
         } else {
            JOptionPane.showMessageDialog(
                    null,
-                   "usuario o clave inválida.");
+                   "usuario o clave invÃ¡lida.");
         }
         
     }//GEN-LAST:event_loginButtonActionPerformed
-
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        userText.setText("");
-        passText.setText("");
-    }//GEN-LAST:event_clearButtonActionPerformed
 
     private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
         // TODO add your handling code here:
@@ -207,7 +247,7 @@ public class PaginaEntrada extends javax.swing.JFrame {
 
     
     // Metodo del controlador
-    // **AQUÍ SE COMIENZA A EJECUTAR LA APP**
+    // **AQUÃ� SE COMIENZA A EJECUTAR LA APP**
     public static void main(String[] args) {
         // Configuracion del tema de la interfaz de usuario y LookAndFeel de la app
         try {
@@ -223,15 +263,16 @@ public class PaginaEntrada extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clearButton;
     private javax.swing.JComboBox<String> rolUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passText;
     private javax.swing.JTextField userText;
-    // End of variables declaration//GEN-END:variables
+	public Color getJLabel1Background() {
+		return jLabel1.getBackground();
+	}
+	public void setJLabel1Background(Color background) {
+		jLabel1.setBackground(background);
+	}
 }

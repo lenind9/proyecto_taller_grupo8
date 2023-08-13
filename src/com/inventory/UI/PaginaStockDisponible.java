@@ -15,6 +15,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Font;
 
 public class PaginaStockDisponible extends javax.swing.JPanel {
 
@@ -22,7 +23,8 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
     String username;
    
     public PaginaStockDisponible(String username) {
-    	setBackground(new Color(153,179,254));
+    	setAlignmentY(Component.TOP_ALIGNMENT);
+    	setBackground(Color.WHITE);
         initComponents();
         this.username = username;
         loadDataSet();
@@ -38,15 +40,17 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setBackground(new Color(255, 255, 255));
-        jScrollPane1.setForeground(new Color(0, 0, 96));
+        jScrollPane1.setForeground(Color.BLACK);
         
         tablaStockDisponible = new javax.swing.JTable();
-        tablaStockDisponible.setBackground(new Color(0, 0, 96));//azul
-        tablaStockDisponible.setForeground(new Color(255, 255, 255));//blanco
+        tablaStockDisponible.setRowHeight(40);
+        tablaStockDisponible.setFont(new Font("Roboto Light", Font.PLAIN, 15));
+        tablaStockDisponible.setBackground(Color.WHITE);//azul
+        tablaStockDisponible.setForeground(Color.BLACK);//blanco
         
         refreshButton = new javax.swing.JButton();
         refreshButton.setForeground(new Color(255, 255, 255));
-        refreshButton.setBackground(new Color(0, 0, 128));
+        refreshButton.setBackground(new Color(80, 77, 166));
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         jLabel1.setText("STOCK DISPONIBLE");
@@ -65,7 +69,7 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tablaStockDisponible);
 
-        refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        refreshButton.setFont(new Font("Roboto Light", Font.BOLD, 15)); // NOI18N
         refreshButton.setText("RECARGAR");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,12 +82,14 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        					.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+        				.addGroup(layout.createSequentialGroup()
         					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 215, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
         					.addComponent(refreshButton)))
         			.addContainerGap())
         );
@@ -94,11 +100,15 @@ public class PaginaStockDisponible extends javax.swing.JPanel {
         			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
         				.addComponent(refreshButton, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        			.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        					.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+        					.addGap(478))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(35)
+        					.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 570, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())))
         );
         this.setLayout(layout);
     }// </editor-fold>//GEN-END:initComponents

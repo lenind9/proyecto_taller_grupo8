@@ -14,6 +14,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 
 public class Dashboard extends javax.swing.JFrame {
@@ -26,6 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
     LocalDateTime outTime;
    
     public Dashboard(String username, String userType, UserDTO userDTO) {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(Dashboard.class.getResource("/com/inventory/UI/Icons/logomin.png")));
         initComponents();
 
         navPanel.setVisible(false);
@@ -95,56 +100,126 @@ public class Dashboard extends javax.swing.JFrame {
     public void addLogsPage() {
         layout.show(displayPanel, "Logs");
     }
-
+	private void hoverButtons() {
+		prodButton.setBackground(new Color(80, 77, 166));
+		stockButton.setBackground(new Color(80, 77, 166));	
+		custButton.setBackground(new Color(80, 77, 166));
+		suppButton.setBackground(new Color(80, 77, 166));
+		salesButton.setBackground(new Color(80, 77, 166));
+		custButton.setBackground(new Color(80, 77, 166));
+		usersButton.setBackground(new Color(80, 77, 166));
+		purchaseButton.setBackground(new Color(80, 77, 166));
+		logsButton.setBackground(new Color(80, 77, 166));
+		
+	
+	}
+	
+	private void hoverButtonsLetras() {
+		prodButton.setForeground(Color.WHITE);
+		stockButton.setForeground(Color.WHITE);	
+		salesButton.setForeground(Color.WHITE);
+		custButton.setForeground(Color.WHITE);
+		suppButton.setForeground(Color.WHITE);
+		usersButton.setForeground(Color.WHITE);
+		purchaseButton.setForeground(Color.WHITE);
+		logsButton.setForeground(Color.WHITE);
+	}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+    	
         mainPanel = new javax.swing.JPanel();
-        mainPanel.setBackground(new Color(153, 179, 254));
+        mainPanel.setBackground(new Color(255, 255, 255));
         menuPanel = new javax.swing.JPanel();
         menuButton = new javax.swing.JButton();
+        menuButton.setBorder(null);
+        menuButton.setBorderPainted(false);
         menuButton.setForeground(new Color(0, 0, 0));
-        menuButton.setBackground(new Color(153, 179, 254));
+        menuButton.setBackground(new Color(80, 77, 166));
         navPanel = new javax.swing.JPanel();
-        navPanel.setBackground(new Color(153, 179, 254));
+        navPanel.setBackground(new Color(80, 77, 166));
         homeButton = new javax.swing.JButton();
-        homeButton.setBackground(new Color(153, 179, 254));
+        homeButton.setBorder(null);
+        homeButton.setBorderPainted(false);
+        homeButton.setBackground(new Color(80, 77, 166));
         prodButton = new javax.swing.JButton();
-        prodButton.setBackground(new Color(255, 255, 255));
-        prodButton.setForeground(new Color(0, 0, 0));
-        prodButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+        prodButton.setHorizontalAlignment(SwingConstants.LEFT);
+        prodButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/producto_icon.png")));
+        prodButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+
+        prodButton.setBorderPainted(false);
+        prodButton.setBackground(new Color(80, 77, 166));
+        prodButton.setForeground(Color.WHITE);
+        prodButton.setBorder(new EmptyBorder(0, 14, 0, 0));
         stockButton = new javax.swing.JButton();
-        stockButton.setBackground(new Color(0, 0, 96));
-        stockButton.setForeground(new Color(255, 255, 255));
-        stockButton.setText("Stock \r\ndisponible");
+        stockButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/in_stock.png")));
+        stockButton.setHorizontalAlignment(SwingConstants.LEFT);
+        stockButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        stockButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        stockButton.setBorderPainted(false);
+        stockButton.setBackground(new Color(80, 77, 166));
+        stockButton.setForeground(Color.WHITE);
+        stockButton.setText("  Stock \r\ndisponible");
         custButton = new javax.swing.JButton();
-        custButton.setBackground(new Color(255, 255, 255));
-        custButton.setForeground(new Color(0, 0, 128));
+        custButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/cliente_icon.png")));
+        custButton.setHorizontalAlignment(SwingConstants.LEFT);
+        custButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        custButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        custButton.setBorderPainted(false);
+        custButton.setBackground(new Color(80, 77, 166));
+        custButton.setForeground(Color.WHITE);
         suppButton = new javax.swing.JButton();
-        suppButton.setForeground(new Color(255, 255, 255));
-        suppButton.setBackground(new Color(0, 0, 96));
+        suppButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/proveedor.png")));
+        suppButton.setHorizontalAlignment(SwingConstants.LEFT);
+        suppButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        suppButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        suppButton.setBorderPainted(false);
+        suppButton.setForeground(Color.WHITE);
+        suppButton.setBackground(new Color(80, 77, 166));
         salesButton = new javax.swing.JButton();
-        salesButton.setForeground(new Color(0, 0, 128));
-        salesButton.setBackground(new Color(255, 255, 255));
+        salesButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/ventas.png")));
+        salesButton.setHorizontalAlignment(SwingConstants.LEFT);
+        salesButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        salesButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        salesButton.setBorderPainted(false);
+        salesButton.setForeground(Color.WHITE);
+        salesButton.setBackground(new Color(80, 77, 166));
         usersButton = new javax.swing.JButton();
-        usersButton.setForeground(new Color(0, 0, 128));
-        usersButton.setBackground(new Color(255, 255, 255));
+        usersButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/ususario_aniadir.png")));
+        usersButton.setHorizontalAlignment(SwingConstants.LEFT);
+        usersButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        usersButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        usersButton.setBorderPainted(false);
+        usersButton.setForeground(Color.WHITE);
+        usersButton.setBackground(new Color(80, 77, 166));
         purchaseButton = new javax.swing.JButton();
+        purchaseButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/agregar-producto.png")));
+        purchaseButton.setHorizontalAlignment(SwingConstants.LEFT);
+        purchaseButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        purchaseButton.setBorderPainted(false);
+        purchaseButton.setBorder(new EmptyBorder(0, 14, 0, 0));
         purchaseButton.setForeground(new Color(255, 255, 255));
-        purchaseButton.setBackground(new Color(0, 0, 96));
+        purchaseButton.setBackground(new Color(80, 77, 166));
         logsButton = new javax.swing.JButton();
-        logsButton.setForeground(new Color(255, 255, 255));
-        logsButton.setBackground(new Color(0, 0, 96));
+        logsButton.setIcon(new ImageIcon(Dashboard.class.getResource("/com/inventory/UI/Icons/administrador.png")));
+        logsButton.setHorizontalAlignment(SwingConstants.LEFT);
+        logsButton.setFont(new Font("Roboto Light", Font.BOLD, 15));
+        logsButton.setBorder(new EmptyBorder(0, 14, 0, 0));
+        logsButton.setBorderPainted(false);
+        logsButton.setForeground(Color.WHITE);
+        logsButton.setBackground(new Color(80, 77, 166));
         displayPanel = new javax.swing.JPanel();
         userPanel = new javax.swing.JPanel();
-        userPanel.setBackground(new Color(153, 179, 254));
+        userPanel.setBackground(Color.WHITE);
         nameLabel = new javax.swing.JLabel();
         nameLabel.setForeground(new Color(0, 0, 0));
         nameLabel.setBackground(new Color(153, 179, 254));
         logoutButton = new javax.swing.JButton();
-        logoutButton.setForeground(new Color(0, 0, 0));
-        logoutButton.setBackground(new Color(153, 179, 254));
+        logoutButton.setBorderPainted(false);
+        logoutButton.setFont(new Font("Roboto Light", Font.BOLD, 18));
+        logoutButton.setForeground(Color.WHITE);
+        logoutButton.setBackground(new Color(80, 77, 166));
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -168,19 +243,17 @@ public class Dashboard extends javax.swing.JFrame {
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanelLayout.setHorizontalGroup(
         	menuPanelLayout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(menuPanelLayout.createSequentialGroup()
-        			.addComponent(menuButton, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        		.addComponent(menuButton, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
         );
         menuPanelLayout.setVerticalGroup(
         	menuPanelLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(menuPanelLayout.createSequentialGroup()
         			.addComponent(menuButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap())
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuPanel.setLayout(menuPanelLayout);
 
-        navPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        navPanel.setBorder(null);
 
         homeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inventory/UI/Icons/homepages_home_house_icon_150665.png"))); // NOI18N
         homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -190,7 +263,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        prodButton.setText("Productos");
+        prodButton.setText("  Productos");
         prodButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         prodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +277,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        custButton.setText("Clientes");
+        custButton.setText("  Clientes");
         custButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         custButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +285,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        suppButton.setText("Proveedores");
+        suppButton.setText("  Proveedores");
         suppButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         suppButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +293,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        salesButton.setText("Ventas");
+        salesButton.setText("  Ventas");
         salesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +301,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        usersButton.setText("Usuarios");
+        usersButton.setText("  Usuarios");
         usersButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         usersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +309,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        purchaseButton.setText("Comprar");
+        purchaseButton.setText("  Comprar");
         purchaseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         purchaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +317,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        logsButton.setText("Registrar usuarios");
+        logsButton.setText("  Registrar usuarios");
         logsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,15 +328,18 @@ public class Dashboard extends javax.swing.JFrame {
         javax.swing.GroupLayout navPanelLayout = new javax.swing.GroupLayout(navPanel);
         navPanelLayout.setHorizontalGroup(
         	navPanelLayout.createParallelGroup(Alignment.LEADING)
-        		.addComponent(homeButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(prodButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(stockButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(custButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(suppButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(salesButton, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(purchaseButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(usersButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-        		.addComponent(logsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+        		.addComponent(homeButton, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+        		.addGroup(navPanelLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(navPanelLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(logsButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(usersButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(purchaseButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(salesButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(suppButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(custButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(stockButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+        				.addComponent(prodButton, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)))
         );
         navPanelLayout.setVerticalGroup(
         	navPanelLayout.createParallelGroup(Alignment.LEADING)
@@ -272,30 +348,29 @@ public class Dashboard extends javax.swing.JFrame {
         			.addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
         			.addGap(18)
         			.addComponent(prodButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(29)
-        			.addComponent(stockButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(custButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(suppButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(salesButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(purchaseButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(usersButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(logsButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(30, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(stockButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(custButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(suppButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(salesButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(purchaseButton, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(usersButton, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(logsButton, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(332, Short.MAX_VALUE))
         );
         navPanel.setLayout(navPanelLayout);
 
         displayPanel.setLayout(new java.awt.CardLayout());
 
-        nameLabel.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        nameLabel.setFont(new Font("Roboto Light", Font.BOLD | Font.ITALIC, 18)); // NOI18N
         nameLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inventory/UI/Icons/user_icon_150670.png"))); // NOI18N
         nameLabel.setText("Usuario: ");
-        nameLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inventory/UI/Icons/log-out_icon-icons.com_50106.png"))); // NOI18N
         logoutButton.setText("Salir");
@@ -307,37 +382,34 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
-        userPanel.setLayout(userPanelLayout);
         userPanelLayout.setHorizontalGroup(
-            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userPanelLayout.createSequentialGroup()
-                .addContainerGap(401, Short.MAX_VALUE)
-                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoutButton))
+        	userPanelLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(userPanelLayout.createSequentialGroup()
+        			.addContainerGap(538, Short.MAX_VALUE)
+        			.addComponent(nameLabel, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(logoutButton))
         );
         userPanelLayout.setVerticalGroup(
-            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userPanelLayout.createSequentialGroup()
-                .addGroup(userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, userPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+        	userPanelLayout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(logoutButton, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        		.addGroup(userPanelLayout.createSequentialGroup()
+        			.addGap(4)
+        			.addComponent(nameLabel, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
         );
+        userPanel.setLayout(userPanelLayout);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanelLayout.setHorizontalGroup(
         	mainPanelLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(mainPanelLayout.createSequentialGroup()
-        			.addGroup(mainPanelLayout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(navPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(menuPanel, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE))
-        			.addGap(53)
+        			.addGroup(mainPanelLayout.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(menuPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(navPanel, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+        			.addGap(18)
         			.addGroup(mainPanelLayout.createParallelGroup(Alignment.LEADING)
         				.addComponent(displayPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(userPanel, GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)))
+        				.addComponent(userPanel, GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)))
         );
         mainPanelLayout.setVerticalGroup(
         	mainPanelLayout.createParallelGroup(Alignment.LEADING)
@@ -347,8 +419,8 @@ public class Dashboard extends javax.swing.JFrame {
         				.addComponent(menuPanel, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(mainPanelLayout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(displayPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(navPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        				.addComponent(navPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(displayPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addContainerGap())
         );
         mainPanel.setLayout(mainPanelLayout);
@@ -393,31 +465,57 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void usersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersButtonActionPerformed
-        addUsersPage();
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	usersButton.setBackground(Color.WHITE);
+    	usersButton.setForeground(new Color (80, 77, 166));
+    	addUsersPage();
     }//GEN-LAST:event_usersButtonActionPerformed
 
     private void salesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesButtonActionPerformed
-        addSalesPage();
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	salesButton.setBackground(Color.WHITE);
+    	salesButton.setForeground(new Color (80, 77, 166));
+    	addSalesPage();
     }//GEN-LAST:event_salesButtonActionPerformed
 
     private void suppButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suppButtonActionPerformed
-        addSuppPage();
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	suppButton.setBackground(Color.WHITE);
+    	suppButton.setForeground(new Color (80, 77, 166));
+    	addSuppPage();
     }//GEN-LAST:event_suppButtonActionPerformed
 
     private void custButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custButtonActionPerformed
-        addCustPage();
+    	
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	custButton.setBackground(Color.WHITE);
+    	custButton.setForeground(new Color (80, 77, 166));
+    	addCustPage();
     }//GEN-LAST:event_custButtonActionPerformed
 
     private void stockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockButtonActionPerformed
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	stockButton.setBackground(Color.WHITE);
+    	stockButton.setForeground(new Color (80, 77, 166));
         addStockPage();
     }//GEN-LAST:event_stockButtonActionPerformed
 
     private void prodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prodButtonActionPerformed
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	prodButton.setBackground(Color.WHITE);
+    	prodButton.setForeground(new Color (80, 77, 166));
         addProdPage();
     }//GEN-LAST:event_prodButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         //dispose();
+    	
         addHomePage();
     }//GEN-LAST:event_homeButtonActionPerformed
 
@@ -426,11 +524,19 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_menuButtonActionPerformed
 
     private void purchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseButtonActionPerformed
-        addPurchasePage();
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	purchaseButton.setBackground(Color.WHITE);
+    	purchaseButton.setForeground(new Color (80, 77, 166));
+    	addPurchasePage();
     }//GEN-LAST:event_purchaseButtonActionPerformed
 
     private void logsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logsButtonActionPerformed
-        addLogsPage();
+    	this.hoverButtons();
+    	this.hoverButtonsLetras();
+    	logsButton.setBackground(Color.WHITE);
+    	logsButton.setForeground(new Color (80, 77, 166));
+    	addLogsPage();
     }//GEN-LAST:event_logsButtonActionPerformed
 
     // Metodo para mostrar el usuario actualmente conectado
